@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Yano Oppa</title>
+<link href="assets/663b882a603bf82c1a6fc083_favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="assets/663b8897102cc221877f1aaf_webclip.png" rel="apple-touch-icon">
+<link rel="preconnect" href="https://cdn.prod.website-files.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdn.prod.website-files.com">
+<link href="assets/yanooppa.webflow.shared.f3b53e05a.css" rel="stylesheet">
+<script src="data/works-data.js" defer></script>
+<style>
+  .nav-bar-background-colour { background: #fff; opacity: 1 !important; }
+  .container-side-padding.home-header { filter: invert(0%) !important; }
+
+  /* ── Hide desktop-only nav on mobile ── */
+  @media (max-width: 991px) {
+    .nav-bar-left-links { display: none !important; }
+    .nav-menu.w-nav-menu { display: none !important; }
+    .nav-bar-right-links { display: none !important; }
+  }
+
+  /* ── Hero image ── */
+  .work-hero {
+    margin-top: 70px;
+    width: 100%;
+    aspect-ratio: 16/7;
+    overflow: hidden;
+    background: #111;
+  }
+  .work-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ── Content layout ── */
+  .work-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 5vw 100px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 80px;
+  }
+  @media (max-width: 900px) {
+    .work-content { grid-template-columns: 1fr; gap: 40px; }
+    .work-hero { aspect-ratio: 4/3; }
+  }
+
+  /* ── Back link ── */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #6e6e73;
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: #1d1d1f; }
+  .back-link svg { width: 16px; height: 16px; }
+
+  /* ── Work title / meta ── */
+  .work-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin: 0 0 16px;
+  }
+  .work-company {
+    font-size: 1rem;
+    color: #6e6e73;
+    margin: 0 0 24px;
+  }
+  .work-cats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+  .work-cat-tag {
+    background: #f2f2f2;
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #1d1d1f;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Overview ── */
+  .work-overview {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #3d3d3d;
+  }
+  .work-overview p { margin: 0 0 20px; }
+
+  /* ── YouTube embed ── */
+  .work-video {
+    margin-bottom: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    background: #111;
+  }
+  .work-video iframe { width: 100%; height: 100%; border: none; display: block; }
+
+  /* ── Sidebar ── */
+  .work-sidebar { }
+  .sidebar-section { margin-bottom: 40px; }
+  .sidebar-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6e6e73;
+    margin-bottom: 10px;
+  }
+  .sidebar-value { font-size: 0.95rem; color: #1d1d1f; line-height: 1.5; }
+
+  /* ── Image gallery ── */
+  .work-gallery {
+    margin-top: 64px;
+    padding: 0 5vw 80px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .gallery-img {
+    width: 100%; aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    background: #f2f2f2;
+    transition: opacity 0.3s;
+  }
+  .gallery-img:hover { opacity: 0.9; }
+
+  /* ── Loading / error states ── */
+  .loading-msg { padding: 120px 5vw; text-align: center; color: #6e6e73; font-size: 1rem; }
+</style>
+</head>
+<body class="body">
+
+<!-- Navbar -->
+<div role="banner" class="navbar w-nav">
+  <div class="nav-bar-background-colour"></div>
+  <div class="container-side-padding home-header">
+    <div class="nav">
+      <nav class="nav-menu w-nav-menu">
+        <a href="index.html" class="footer-link w-nav-link">Home</a>
+      </nav>
+      <div class="nav-bar-mid-links">
+        <a href="index.html" class="brand w-nav-brand" aria-label="home">
+          <img src="assets/660d0a017db56d8c1eecb513_YanoOppa Black Logo.svg" loading="eager" height="14" alt="Yano Oppa Logo" width="123" class="nav-bar-brand-logo-image">
+        </a>
+      </div>
+      <div class="nav-bar-right-links">
+        <a href="https://www.instagram.com/yanooppa/" target="_blank" class="nav-social w-inline-block">
+          <img src="assets/645cd1cac77d1042e272bf40_instagram.svg" loading="eager" height="50" width="50" alt="Instagram" class="social-image">
+        </a>
+        <a href="https://www.youtube.com/channel/UCYnfq4_mzYLCruxJiJSEUig" target="_blank" class="nav-social w-inline-block">
+          <img src="assets/645cbbfc2ad9dd74f6f4951c_Asset 1.svg" loading="eager" height="35" width="50" alt="Youtube" class="social-image">
+        </a>
+      </div>
+      <div class="nav-bar-left-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="works.html" class="footer-link">Works</a>
+        <a href="https://yanooppa.webflow.io/contact" class="footer-link">Contact</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="work-page">
+  <div class="loading-msg">Loading…</div>
+</div>
+
+<!-- Footer -->
+<section class="section footer" id="page-footer" style="display:none">
+  <div class="container-side-padding footer">
+    <div class="w-layout-grid grid-4">
+      <div>
+        <div class="w-layout-grid grid-3">
+          <a href="index.html" class="link-block-8 w-inline-block">
+            <img src="assets/660d0a05517dca766e8f56fe_YanoOppa White Logo.svg" loading="lazy" width="123" height="14" alt="Yano Oppa Logo" class="footer-logo">
+          </a>
+          <a href="#" class="footer-page-top-link w-inline-block">
+            <div class="div-block-45"></div>
+            <div class="works-page-paragraph white vertical">Page Top</div>
+          </a>
+        </div>
+      </div>
+      <div class="div-block-43">
+        <div class="works-page-paragraph white thin">Innovation begins with a single step.<br>Let's take it together.</div>
+        <a href="https://yanooppa.webflow.io/contact" class="link-block-7 w-inline-block">
+          <div class="paragraph footer-contact-us">Let's Chat</div>
+        </a>
+      </div>
+      <div class="div-block-47 social">
+        <div class="text-block-8 social">Follow Us</div>
+        <div class="div-block-46">
+          <a href="https://www.tiktok.com/@yanooppa" target="_blank" class="link-block-6 w-inline-block">
+            <img src="assets/673c94563bb1240d63ea91e9_TikTok Logo.svg" loading="eager" width="150" height="150" alt="TikTok" class="image-17">
+          </a>
+          <a href="https://www.instagram.com/yanooppa/" target="_blank" class="link-block-6 w-inline-block">
+            <img src="assets/6635029ab44f16314935f9fd_instagram white.svg" loading="eager" width="150" height="150" alt="Instagram" class="image-17">
+          </a>
+          <a href="https://www.youtube.com/@yanooppa" target="_blank" class="link-block-6 w-inline-block">
+            <img src="assets/663521fe7a2dffd908f39328_youtube white.svg" loading="eager" width="150" height="150" alt="YouTube" class="image-17">
+          </a>
+        </div>
+      </div>
+      <div class="div-block-47"><a href="https://yanooppa.webflow.io/contact" class="w-inline-block"><div class="text-block-8">Contact Us &nbsp;›</div></a></div>
+      <div class="div-block-47"><a href="works.html" class="w-inline-block"><div class="text-block-8">Our Portfolio &nbsp;›</div></a></div>
+      <div class="div-block-47 bottom copright"><div class="text-block-8 center">©YanoOppa all rights reserved.</div></div>
+      <div class="div-block-76">
+        <div class="div-block-77">
+          <a href="index.html" class="footer-link white underline">Home</a>
+          <a href="works.html" class="footer-link white underline">Works</a>
+          <a href="https://yanooppa.webflow.io/contact" class="footer-link white underline">Contact</a>
+        </div>
+        <a href="#" class="footer-link white copyright">Copyright © 2025 Yano Oppa. All rights reserved.</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mobile-nav">
+  <div class="div-block-13">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="works.html" class="mobile-nav-link">Works</a>
+    <a href="https://yanooppa.webflow.io/contact" class="mobile-nav-link">Contact</a>
+  </div>
+</section>
+
+<script>
+(function() {
+  var slug = new URLSearchParams(window.location.search).get('slug');
+  var container = document.getElementById('work-page');
+
+  if (!slug) {
+    container.innerHTML = '<div class="loading-msg">No work specified. <a href="works.html">Back to works</a></div>';
+    return;
+  }
+
+  function init(works) {
+      var w = works.find(function(x){ return x.slug === slug; });
+      if (!w) {
+        container.innerHTML = '<div class="loading-msg">Work not found. <a href="works.html">Back to works</a></div>';
+        return;
+      }
+
+      // Update page title
+      document.title = w.name + ' — Yano Oppa';
+
+      // Hero image
+      var heroSrc = w.mainImage || w.thumbnail;
+      var heroHTML = heroSrc
+        ? '<div class="work-hero"><img src="' + heroSrc + '" alt="' + w.name + '"></div>'
+        : '';
+
+      // Categories
+      var catsHTML = w.categories.map(function(c){
+        return '<span class="work-cat-tag">' + c + '</span>';
+      }).join('');
+
+      // YouTube video
+      var videoHTML = '';
+      if (w.youtubeId) {
+        videoHTML = '<div class="work-video"><iframe src="https://www.youtube.com/embed/' + w.youtubeId + '" allowfullscreen allow="autoplay; encrypted-media"></iframe></div>';
+      }
+
+      // Overview
+      var overviewHTML = w.overview
+        ? '<div class="work-overview">' + w.overview + '</div>'
+        : '';
+
+      // Sidebar
+      var sidebarHTML = [
+        '<div class="sidebar-section"><div class="sidebar-label">Client</div><div class="sidebar-value">' + (w.companyName || '—') + '</div></div>',
+        w.categories.length ? '<div class="sidebar-section"><div class="sidebar-label">Services</div><div class="sidebar-value">' + w.categories.join('<br>') + '</div></div>' : '',
+      ].join('');
+
+      // Gallery (all multiple images)
+      var galleryHTML = '';
+      if (w.images && w.images.length) {
+        galleryHTML = '<div class="work-gallery"><div class="gallery-grid">' +
+          w.images.map(function(src){
+            return '<img src="' + src + '" alt="" class="gallery-img" loading="lazy">';
+          }).join('') +
+        '</div></div>';
+      }
+
+      container.innerHTML = [
+        heroHTML,
+        '<div class="work-content">',
+          '<div class="work-main">',
+            '<a href="works.html" class="back-link">',
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>',
+              'All Works',
+            '</a>',
+            '<h1 class="work-title">' + w.name + '</h1>',
+            '<p class="work-company">' + (w.companyName || '') + '</p>',
+            '<div class="work-cats">' + catsHTML + '</div>',
+            videoHTML,
+            overviewHTML,
+          '</div>',
+          '<div class="work-sidebar">' + sidebarHTML + '</div>',
+        '</div>',
+        galleryHTML,
+      ].join('');
+
+      document.getElementById('page-footer').style.display = '';
+  }
+
+  if (window.WORKS_DATA) {
+    init(window.WORKS_DATA);
+  } else {
+    document.querySelector('script[src="data/works-data.js"]').addEventListener('load', function() { init(window.WORKS_DATA); });
+  }
+})();
+</script>
+</body>
+</html>
