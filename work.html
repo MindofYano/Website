@@ -13,17 +13,22 @@
 <style>
   .nav-bar-background-colour { background: #fff; opacity: 1 !important; }
   .container-side-padding.home-header { filter: invert(0%) !important; }
+  .nav-bar-left-links  { grid-column: 1; grid-row: 1; align-self: center; }
+  .nav-bar-mid-links   { grid-column: 2; grid-row: 1; justify-self: center; align-self: center; }
+  .nav-bar-right-links { grid-column: 3; grid-row: 1; justify-self: end; align-self: center; }
+  .div-block-37.in-works { align-items: center; }
 
-  /* ── Hide desktop-only nav on mobile ── */
-  @media (max-width: 991px) {
+  /* ── Hide nav-menu hamburger always (handled by mobile-nav section) ── */
+  .nav-menu.w-nav-menu { display: none !important; }
+  /* ── At mobile, hide left links (shown in bottom mobile-nav instead) ── */
+  @media screen and (max-width: 767px) {
     .nav-bar-left-links { display: none !important; }
-    .nav-menu.w-nav-menu { display: none !important; }
-    .nav-bar-right-links { display: none !important; }
+    .nav-bar-mid-links { justify-content: flex-start; justify-self: start; }
   }
 
   /* ── Hero image ── */
   .work-hero {
-    margin-top: 70px;
+    margin-top: 0;
     width: 100%;
     aspect-ratio: 16/7;
     overflow: hidden;
@@ -150,13 +155,18 @@
 <body class="body">
 
 <!-- Navbar -->
-<div role="banner" class="navbar w-nav">
+<div data-animation="over-left" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar work w-nav">
   <div class="nav-bar-background-colour"></div>
   <div class="container-side-padding home-header">
     <div class="nav">
       <nav class="nav-menu w-nav-menu">
         <a href="index.html" class="footer-link w-nav-link">Home</a>
       </nav>
+      <div class="nav-bar-left-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="works.html" class="footer-link">Works</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
       <div class="nav-bar-mid-links">
         <a href="index.html" class="brand w-nav-brand" aria-label="home">
           <img src="assets/660d0a017db56d8c1eecb513_YanoOppa Black Logo.svg" loading="eager" height="14" alt="Yano Oppa Logo" width="123" class="nav-bar-brand-logo-image">
@@ -170,11 +180,19 @@
           <img src="assets/645cbbfc2ad9dd74f6f4951c_Asset 1.svg" loading="eager" height="35" width="50" alt="Youtube" class="social-image">
         </a>
       </div>
-      <div class="nav-bar-left-links">
-        <a href="index.html" class="footer-link">Home</a>
-        <a href="works.html" class="footer-link">Works</a>
-        <a href="https://yanooppa.webflow.io/contact" class="footer-link">Contact</a>
-      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Secondary in-works navbar: company name + All Works button -->
+<div class="navbar in-works w-nav">
+  <div class="nav-bar-background-colour in-works"></div>
+  <div class="div-block-30 in-works">
+    <div class="div-block-37 in-works">
+      <a id="works-company-name" href="#top" class="w-inline-block">
+        <div id="works-name" class="text-block-6"></div>
+      </a>
+      <a href="works.html" class="button w-button">All Works</a>
     </div>
   </div>
 </div>
@@ -182,6 +200,19 @@
 <div id="work-page">
   <div class="loading-msg">Loading…</div>
 </div>
+
+<!-- Works Showcase section -->
+<section class="section off-white" id="works-showcase" style="display:none">
+  <div class="container-side-padding _150paddingtop blog">
+    <div class="container-2">
+      <div class="div-block-73">
+        <div class="paragraph-2 grey blog">The latest works from Yano Oppa.</div>
+        <a href="works.html" class="button-a-like w-button">See All Works</a>
+        <h3 class="blog-h3 works">Works Showcase</h3>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Footer -->
 <section class="section footer" id="page-footer" style="display:none">
@@ -200,7 +231,7 @@
       </div>
       <div class="div-block-43">
         <div class="works-page-paragraph white thin">Innovation begins with a single step.<br>Let's take it together.</div>
-        <a href="https://yanooppa.webflow.io/contact" class="link-block-7 w-inline-block">
+        <a href="contact.html" class="link-block-7 w-inline-block">
           <div class="paragraph footer-contact-us">Let's Chat</div>
         </a>
       </div>
@@ -218,14 +249,14 @@
           </a>
         </div>
       </div>
-      <div class="div-block-47"><a href="https://yanooppa.webflow.io/contact" class="w-inline-block"><div class="text-block-8">Contact Us &nbsp;›</div></a></div>
+      <div class="div-block-47"><a href="contact.html" class="w-inline-block"><div class="text-block-8">Contact Us &nbsp;›</div></a></div>
       <div class="div-block-47"><a href="works.html" class="w-inline-block"><div class="text-block-8">Our Portfolio &nbsp;›</div></a></div>
       <div class="div-block-47 bottom copright"><div class="text-block-8 center">©YanoOppa all rights reserved.</div></div>
       <div class="div-block-76">
         <div class="div-block-77">
           <a href="index.html" class="footer-link white underline">Home</a>
           <a href="works.html" class="footer-link white underline">Works</a>
-          <a href="https://yanooppa.webflow.io/contact" class="footer-link white underline">Contact</a>
+          <a href="contact.html" class="footer-link white underline">Contact</a>
         </div>
         <a href="#" class="footer-link white copyright">Copyright © 2025 Yano Oppa. All rights reserved.</a>
       </div>
@@ -237,7 +268,7 @@
   <div class="div-block-13">
     <a href="index.html" class="mobile-nav-link">Home</a>
     <a href="works.html" class="mobile-nav-link">Works</a>
-    <a href="https://yanooppa.webflow.io/contact" class="mobile-nav-link">Contact</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
   </div>
 </section>
 
@@ -319,6 +350,9 @@
       ].join('');
 
       document.getElementById('page-footer').style.display = '';
+      document.getElementById('works-showcase').style.display = '';
+      var worksName = document.getElementById('works-name');
+      if (worksName) worksName.textContent = w.companyName || w.name;
   }
 
   if (window.WORKS_DATA) {
