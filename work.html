@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work — Yano Oppa</title>
+<meta name="description" content="">
 <link href="assets/663b882a603bf82c1a6fc083_favicon.ico" rel="shortcut icon" type="image/x-icon"><link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link href="assets/663b8897102cc221877f1aaf_webclip.png" rel="apple-touch-icon">
 <link rel="preload" href="assets/sf-pro-text_medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -175,7 +176,7 @@
         <a href="https://www.instagram.com/yanooppa/" target="_blank" class="nav-social w-inline-block">
           <img src="assets/645cd1cac77d1042e272bf40_instagram.svg" loading="eager" height="50" width="50" alt="Instagram" class="social-image">
         </a>
-        <a href="https://www.youtube.com/channel/UCYnfq4_mzYLCruxJiJSEUig" target="_blank" class="nav-social w-inline-block">
+        <a href="https://www.youtube.com/@yanooppa" target="_blank" class="nav-social w-inline-block">
           <img src="assets/645cbbfc2ad9dd74f6f4951c_Asset 1.svg" loading="eager" height="35" width="50" alt="Youtube" class="social-image">
         </a>
       </div>
@@ -196,9 +197,11 @@
   </div>
 </div>
 
+<main>
 <div id="work-page">
   <div class="loading-msg">Loading…</div>
 </div>
+</main>
 
 <!-- Works Showcase section -->
 <section class="section off-white" id="works-showcase" style="display:none">
@@ -288,8 +291,10 @@
         return;
       }
 
-      // Update page title
+      // Update page title and meta description from CMS data
       document.title = w.name + ' — Yano Oppa';
+      var metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc && w.shortDescription) metaDesc.setAttribute('content', w.shortDescription);
 
       // Hero image
       var heroSrc = w.mainImage || w.thumbnail;

@@ -3,7 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}</style>
+<link rel="preload" href="assets/sf-pro-text_semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="assets/sf-pro-text_bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="assets/sf-pro-text_medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.prod.website-files.com/645b4dd7dcc49a6a04133f8f/671a32e61b085e5e22a67251_sdfsdf.avif" as="image" fetchpriority="high">
 <title>Yano Oppa | Works</title>
 <meta content="Discover inspiring brand identities, eye-catching commercials, and user-friendly websites from Yano Oppa, the top Creative designs." name="description">
 <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -173,6 +176,7 @@
 <h1 class="visuallyhidden">Yano Oppa - Our Work - Disruptive. Impactful. Memorable.</h1>
 
 <!-- Main content — matches original section + tab structure exactly -->
+<main>
 <section class="section blog-grey">
   <div class="container-side-padding works-page works-max-width">
     <div class="our-works-container">
@@ -237,6 +241,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <!-- Footer — exact original structure with local asset paths -->
 <section class="section footer">
@@ -364,11 +369,15 @@
     var grad = gradients[w._gradIdx % gradients.length];
     var thumb = w.thumbnail || w.mainImage;
     var cat = w.categories[0] || '';
+    var isFirst = w._gradIdx === 0;
+    var imgAttrs = isFirst
+      ? 'loading="eager" fetchpriority="high"'
+      : 'loading="lazy"';
     return [
       '<div role="listitem" class="collection-item-2 w-dyn-item">',
         '<a href="work.html?slug=' + w.slug + '" class="link-block-9 w-inline-block">',
           '<div class="card-works-image-container">',
-            '<img loading="lazy" src="' + thumb + '" alt="" class="card-works-image">',
+            '<img ' + imgAttrs + ' src="' + thumb + '" alt="" class="card-works-image">',
             '<div data-w-id="fcd55ed1-10ed-a57b-06c7-21b7d19521b6" class="card-overlay" style=""></div>',
             '<div class="card-grad-overlay" style="background-image:' + grad + '"></div>',
           '</div>',
