@@ -37,6 +37,10 @@
   user-select: none;
 }
 
+@media screen and (max-width: 767px) {
+  .card-works-image-container { border-radius: 0; }
+}
+
 /* Filter carousel */
 .filter-carousel-wrapper {
   position: relative;
@@ -436,10 +440,12 @@
     wheelAccum += isHorizontal ? deltaX : deltaY;
     clearTimeout(wheelTimer);
     wheelTimer = setTimeout(function() {
-      if (wheelAccum > 0) embla.scrollNext();
-      else embla.scrollPrev();
+      if (Math.abs(wheelAccum) > 40) {
+        if (wheelAccum > 0) embla.scrollNext();
+        else embla.scrollPrev();
+      }
       wheelAccum = 0;
-    }, 50);
+    }, 80);
   }, { passive: false });
 
   prevBtn.addEventListener('click', function() { embla.scrollPrev(); });
