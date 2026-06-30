@@ -2048,7 +2048,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: Sf Pro Text;
-  src: url("https://cdn.prod.website-files.com/645a2e0f617ba93c839c7831/663b9e65728025c6e450520f_sf-pro-text_regular.woff2") format("woff2");
+  src: url("sf-pro-text_regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -2056,7 +2056,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: Sf Pro Text;
-  src: url("https://cdn.prod.website-files.com/645a2e0f617ba93c839c7831/6665fb224b9e4359cb7da117_66596810898660b5749062b4_sf-pro-text_semibold.woff2") format("woff2");
+  src: url("sf-pro-text_semibold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -2064,7 +2064,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: Sf Pro Text;
-  src: url("https://cdn.prod.website-files.com/645a2e0f617ba93c839c7831/670548418a62d788dbd293d9_6665fb85bad5149a0de1596a_sf-pro-text_bold.woff2") format("woff2");
+  src: url("sf-pro-text_bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -2072,7 +2072,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: Sf Pro Text;
-  src: url("https://cdn.prod.website-files.com/645a2e0f617ba93c839c7831/67054d2bc28808a4890b2b7a_663b7aef6e6828514732051b_sf-pro-text_medium.woff2") format("woff2");
+  src: url("sf-pro-text_medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -2080,7 +2080,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: Aeonik;
-  src: url("https://cdn.prod.website-files.com/645a2e0f617ba93c839c7831/67dd43865aeed07e3287f5b5_Aeonik-Bold.woff2") format("woff2");
+  src: url("Aeonik-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
